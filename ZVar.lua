@@ -18,8 +18,9 @@ function zona.getVar(var, def)
     return cache[var]
 end
 
-function zona.setVar(var, any)
+function zona.setVar(var, any, save)
     cache[var] = any
+    if not save then return end
     file.Write(PATH_FILE, ToJSON(cache))
 end
 
