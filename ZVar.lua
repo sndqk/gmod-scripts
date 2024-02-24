@@ -7,7 +7,7 @@ local ToJSON = util.TableToJSON
 local Derma_Req = Derma_StringRequest
 
 file.CreateDir 'zona'
-if not file.Exists(PATH_FILE 'DATA') then file.Write(PATH_FILE, ToJSON({})) end
+if not file.Exists(PATH_FILE, 'DATA') then file.Write(PATH_FILE, ToJSON({})) end
 
 function zona.getData()
     return ToTable(file.Read(PATH_FILE, 'DATA') or '[]')
